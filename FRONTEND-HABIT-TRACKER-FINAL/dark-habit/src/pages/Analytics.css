@@ -1,0 +1,115 @@
+.an-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
+@media (max-width: 700px) { .an-summary { grid-template-columns: repeat(2, 1fr); } }
+
+.an-summary-card {
+  background: color-mix(in srgb, var(--card-color, var(--purple)) 10%, var(--surface));
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--card-color, var(--purple));
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.an-summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--card-color, rgba(249,115,22,0.35)), transparent);
+}
+.an-summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--card-color, rgba(249,115,22,0.28));
+}
+
+.an-sum-icon  { font-size: 1.6rem; margin-bottom: 8px; }
+.an-sum-val   { font-family: 'Outfit', sans-serif; font-size: 36px; line-height: 1; font-weight: 800; }
+.an-sum-label { font-size: 11px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+.an-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.an-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(249,115,22,0.25), transparent);
+}
+.an-card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 18px;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.an-row { display: flex; gap: 16px; margin-bottom: 0; }
+.an-row .an-card { margin-bottom: 0; }
+@media (max-width: 760px) { .an-row { flex-direction: column; } }
+
+/* ── Daily bar chart ── */
+.an-bar-chart { display: flex; align-items: flex-end; gap: 4px; height: 140px; }
+.an-bar-col   { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; }
+.an-bar-track {
+  flex: 1;
+  width: 100%;
+  background: var(--surface2);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid var(--border);
+  min-height: 4px;
+}
+.an-bar-fill {
+  width: 100%;
+  border-radius: 4px;
+  min-height: 0;
+  background: var(--purple2, rgba(124,58,237,0.45));
+  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.an-bar-label { font-size: 9px; color: var(--text3); font-weight: 700; }
+
+/* ── Day-of-week chart ── */
+.an-dow-chart { display: flex; gap: 8px; align-items: flex-end; height: 120px; }
+.an-dow-col   { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; }
+.an-dow-pct   { font-size: 9px; font-weight: 700; color: var(--text3); min-height: 14px; }
+.an-dow-track {
+  flex: 1;
+  width: 100%;
+  background: var(--surface2);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid var(--border);
+}
+.an-dow-fill {
+  width: 100%;
+  border-radius: 6px;
+  background: var(--purple2, rgba(124,58,237,0.45));
+  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.an-dow-label { font-size: 10px; font-weight: 800; color: var(--text3); }
+
+/* ── Habit comparison ── */
+.an-habit-list     { display: flex; flex-direction: column; gap: 14px; }
+.an-habit-name     { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+.an-habit-bar-wrap { display: flex; align-items: center; gap: 10px; }
+.an-habit-bar      { flex: 1; height: 8px; background: var(--surface2); border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+.an-habit-fill     { height: 100%; border-radius: 4px; }
+.an-habit-pct      { font-size: 12px; font-weight: 800; min-width: 36px; }
+.an-habit-sub      { font-size: 11px; color: var(--text3); margin-top: 3px; }

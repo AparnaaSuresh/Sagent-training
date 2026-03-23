@@ -1,0 +1,253 @@
+/* ── Tabs ── */
+.ch-tabs {
+  display: flex; gap: 6px; margin-bottom: 24px;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 4px; width: fit-content;
+}
+.ch-tab {
+  background: none; border: none; padding: 8px 18px;
+  border-radius: 8px; font-size: 13px; font-weight: 700;
+  cursor: pointer; color: var(--text3); font-family: 'Outfit', sans-serif;
+  transition: all 0.15s;
+}
+.ch-tab:hover { color: var(--orange); }
+.ch-tab.active {
+  background: var(--surface3); color: var(--orange); box-shadow: var(--shadow);
+  border: 1px solid rgba(249,115,22,0.25);
+}
+
+/* ── Panel ── */
+.ch-panel {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow);
+  margin-bottom: 20px; position: relative; overflow: hidden;
+}
+.ch-panel::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--orange) 0%, var(--amber) 50%, var(--orange) 100%);
+}
+.ch-panel-title { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 8px; font-family: 'Outfit', sans-serif; }
+.ch-panel-sub   { font-size: 13px; color: var(--text3); line-height: 1.7; }
+
+/* ── Code Display ── */
+.ch-code-display {
+  margin-top: 24px; background: var(--surface2);
+  border: 1px dashed rgba(249,115,22,0.35); border-radius: var(--radius);
+  padding: 28px 24px; text-align: center;
+}
+.ch-code-label {
+  font-size: 11px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--text3); margin-bottom: 14px;
+}
+.ch-code-value {
+  font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800;
+  color: var(--orange); letter-spacing: 0.06em; word-break: break-all;
+  line-height: 1.6; margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(249,115,22,0.3);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 14px 16px;
+  user-select: all; cursor: text;
+}
+.ch-copy-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--orange); color: #fff; border: none;
+  padding: 11px 28px; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  transition: all 0.2s; font-family: 'Outfit', sans-serif;
+  box-shadow: 0 4px 14px rgba(249,115,22,0.35);
+}
+.ch-copy-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(249,115,22,0.5); }
+.ch-copy-btn:active { transform: scale(0.97); }
+.ch-copied-toast {
+  margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--green);
+}
+.ch-code-hint { font-size: 12px; color: var(--text3); margin-top: 14px; line-height: 1.7; }
+
+/* ── How it works ── */
+.ch-how { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 20px; }
+.ch-how-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 14px; }
+.ch-how-steps { display: flex; flex-direction: column; gap: 10px; }
+.ch-how-step  { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; color: var(--text2); }
+.ch-how-num   {
+  width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--orange), var(--amber));
+  color: #fff; font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── Join row ── */
+.ch-join-row { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+.ch-join-input { flex: 1; min-width: 220px; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; }
+.ch-preview-btn {
+  background: var(--surface2); color: var(--text2);
+  border: 1px solid var(--border); padding: 0 18px;
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  border-radius: var(--radius-sm); transition: all 0.15s;
+  font-family: 'Outfit', sans-serif; white-space: nowrap;
+}
+.ch-preview-btn:hover { border-color: var(--orange); color: var(--orange); }
+
+/* ── Join Preview ── */
+.ch-join-preview {
+  margin-top: 16px; background: var(--surface2);
+  border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-sm); padding: 16px 20px;
+}
+.ch-join-preview-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+}
+.ch-join-preview-row:last-of-type { border-bottom: none; }
+.ch-join-preview-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); }
+.ch-join-preview-val   { font-size: 14px; font-weight: 700; color: var(--text); }
+.ch-join-preview-note  {
+  margin-top: 12px; font-size: 12px; font-weight: 600;
+  border-radius: var(--radius-sm); padding: 9px 13px;
+}
+.ch-join-preview-note.have   { color: var(--green); background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.18); }
+.ch-join-preview-note.create { color: var(--orange); background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.2); }
+
+/* ── Auto-created ── */
+.ch-auto-created {
+  margin-top: 14px; background: rgba(52,211,153,0.08);
+  border: 1px solid rgba(52,211,153,0.2); border-radius: var(--radius-sm);
+  padding: 12px 16px; font-size: 13px; font-weight: 600; color: var(--green);
+}
+
+/* ── Challenge list ── */
+.ch-challenge-list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.ch-challenge-item {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  padding: 14px 18px; background: var(--surface2);
+  border: 1px solid var(--border); border-radius: var(--radius-sm); transition: all 0.15s;
+}
+.ch-challenge-item:hover { border-color: rgba(249,115,22,0.25); background: var(--surface3); }
+.ch-challenge-code  { font-family: 'Outfit', sans-serif; font-size: 16px; color: var(--text); font-weight: 800; }
+.ch-challenge-since { font-size: 12px; color: var(--text3); margin-top: 4px; }
+
+/* ── Live bar ── */
+.ch-live-bar {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 10px 16px; margin-bottom: 14px;
+  font-size: 13px; font-weight: 600; color: var(--text2);
+}
+.ch-live-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+  background: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,0.7);
+  animation: livePulse 2s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.7); }
+}
+.ch-back-btn {
+  margin-left: auto; background: none; border: 1px solid var(--border);
+  color: var(--text3); padding: 5px 14px; border-radius: 8px;
+  font-size: 12px; font-weight: 700; cursor: pointer;
+  transition: all 0.15s; font-family: 'Outfit', sans-serif;
+}
+.ch-back-btn:hover { color: var(--text); border-color: var(--orange); }
+
+/* ── Habit banner ── */
+.ch-habit-banner {
+  text-align: center; font-size: 13px; font-weight: 600; color: var(--text2);
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 10px 16px; margin-bottom: 12px;
+}
+
+/* ── Winner banner ── */
+.ch-winner-banner {
+  padding: 14px 20px; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 700; margin-bottom: 18px; text-align: center; border: 1px solid;
+}
+.ch-winner-banner.you-win  { background: rgba(249,115,22,0.08); color: var(--orange); border-color: rgba(249,115,22,0.25); }
+.ch-winner-banner.they-win { background: rgba(239,68,68,0.08);  color: var(--red);    border-color: rgba(239,68,68,0.2); }
+
+/* ── Battle grid ── */
+.ch-battle-grid {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  gap: 16px; align-items: center; margin-bottom: 18px;
+}
+.ch-vs-divider { display: flex; align-items: center; justify-content: center; }
+.ch-vs-circle  {
+  width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--orange), var(--amber));
+  color: #fff; font-size: 13px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 20px rgba(249,115,22,0.35);
+}
+@media (max-width: 680px) {
+  .ch-battle-grid { grid-template-columns: 1fr; }
+  .ch-vs-divider  { margin: 4px 0; }
+}
+
+/* ── Player card ── */
+.ch-player-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow);
+  position: relative; transition: all 0.2s;
+}
+.ch-player-card.winning { border-color: rgba(249,115,22,0.4); box-shadow: var(--shadow-md), 0 0 20px rgba(249,115,22,0.08); }
+.ch-player-card.me      { border-top: 3px solid var(--orange); }
+.ch-player-card.them    { border-top: 3px solid var(--red, #ef4444); }
+
+.ch-winning-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--orange), var(--amber));
+  color: #fff; font-size: 11px; font-weight: 800;
+  padding: 3px 14px; border-radius: 20px; white-space: nowrap; letter-spacing: 0.05em;
+}
+
+.ch-player-header  { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.ch-player-avatar  {
+  width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--orange), var(--amber));
+  color: #fff; font-size: 1.2rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.ch-player-name    { font-size: 16px; font-weight: 700; color: var(--text); font-family: 'Outfit', sans-serif; }
+.ch-player-habit   { font-size: 12px; color: var(--text3); margin-top: 2px; }
+.ch-you-tag {
+  background: rgba(249,115,22,0.12); color: var(--orange);
+  font-size: 10px; padding: 1px 7px; border-radius: 20px;
+  font-weight: 700; margin-left: 6px; vertical-align: middle;
+  border: 1px solid rgba(249,115,22,0.25);
+}
+.ch-today-dot         { width: 10px; height: 10px; border-radius: 50%; margin-left: auto; flex-shrink: 0; }
+.ch-today-dot.done    { background: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,0.6); }
+.ch-today-dot.pending { background: var(--border2); }
+
+.ch-stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 18px; }
+.ch-stat      { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 8px; text-align: center; }
+.ch-stat-num  { font-family: 'Outfit', sans-serif; font-size: 26px; color: var(--orange); line-height: 1; font-weight: 800; }
+.ch-stat-label { font-size: 10px; color: var(--text3); font-weight: 700; margin-top: 3px; }
+
+.ch-week-row  { display: flex; gap: 4px; justify-content: space-between; }
+.ch-week-col  { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; }
+.ch-week-cell { width: 100%; aspect-ratio: 1; border-radius: 5px; border: 1px solid var(--border); transition: all 0.15s; }
+.ch-week-cell.done  { background: var(--orange); border-color: transparent; box-shadow: 0 0 8px rgba(249,115,22,0.4); }
+.ch-week-cell.empty { background: var(--surface2); }
+.ch-week-cell.today { border-color: var(--amber) !important; border-width: 2px; }
+.ch-week-label      { font-size: 9px; font-weight: 700; color: var(--text3); }
+
+/* ── Trash talk ── */
+.ch-trash-talk {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px 20px; margin-bottom: 20px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.ch-trash-line {
+  font-size: 13px; font-weight: 700; color: var(--text2);
+  padding: 7px 12px; background: var(--surface);
+  border-radius: var(--radius-xs); border-left: 3px solid var(--orange);
+}
+
+/* ── Compare table ── */
+.ch-compare-table { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+.ch-compare-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 16px; font-family: 'Outfit', sans-serif; }
+.ch-compare-row   { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.ch-compare-row:last-child { border-bottom: none; }
+.ch-compare-val        { font-family: 'Outfit', sans-serif; font-size: 22px; color: var(--text3); font-weight: 700; transition: color 0.2s; }
+.ch-compare-val.right  { text-align: right; }
+.ch-compare-val.winner { color: var(--orange); font-size: 26px; }
+.ch-compare-label { text-align: center; font-size: 12px; font-weight: 700; color: var(--text2); white-space: nowrap; }

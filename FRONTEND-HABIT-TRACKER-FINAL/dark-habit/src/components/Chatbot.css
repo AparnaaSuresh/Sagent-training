@@ -1,0 +1,66 @@
+/* FAB — orange rounded square exactly like screenshot */
+.cht-toggle {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 54px; height: 54px; border-radius: 16px;
+  background: linear-gradient(145deg, var(--orange), var(--orange3));
+  color: #fff; font-size: 1.3rem;
+  border: none; cursor: pointer; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(249,115,22,0.50);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.cht-toggle:hover { transform: translateY(-3px) rotate(-5deg); box-shadow: 0 12px 32px rgba(249,115,22,0.65); }
+
+.cht-window {
+  position: fixed; bottom: 88px; right: 24px;
+  width: 360px; height: 520px;
+  background: var(--surface); border-radius: 22px;
+  box-shadow: var(--shadow-lg);
+  display: flex; flex-direction: column;
+  z-index: 9998; overflow: hidden;
+  border: 1px solid var(--border2);
+}
+.cht-header {
+  background: linear-gradient(135deg, rgba(249,115,22,0.18), rgba(234,88,12,0.10));
+  padding: 14px 16px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+  position: relative; overflow: hidden;
+}
+.cht-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--orange), var(--amber), var(--orange), transparent); }
+.cht-header-left { display: flex; align-items: center; gap: 10px; }
+.cht-avatar { width: 38px; height: 38px; background: linear-gradient(135deg, var(--orange), var(--amber)); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; box-shadow: 0 4px 12px rgba(249,115,22,0.30); }
+.cht-name   { color: var(--text); font-weight: 700; font-size: 0.95rem; font-family: 'Outfit', sans-serif; }
+.cht-status { display: flex; align-items: center; gap: 5px; color: var(--text3); font-size: 0.72rem; margin-top: 1px; }
+.cht-dot    { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px rgba(52,211,153,0.7); flex-shrink: 0; }
+.cht-icon-btn { background: rgba(249,115,22,0.10); border: 1px solid var(--border); color: var(--text3); width: 28px; height: 28px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; cursor: pointer; transition: background 0.15s, color 0.15s; }
+.cht-icon-btn:hover { background: rgba(249,115,22,0.20); color: var(--orange); }
+.cht-messages { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; background: var(--bg2); }
+.cht-messages::-webkit-scrollbar { width: 4px; }
+.cht-messages::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 4px; }
+.cht-msg { display: flex; align-items: flex-end; gap: 7px; }
+.cht-msg.user { flex-direction: row-reverse; }
+.cht-msg-avatar { width: 26px; height: 26px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; }
+.cht-bubble { max-width: 78%; padding: 10px 14px; border-radius: 18px; font-size: 0.84rem; line-height: 1.55; word-break: break-word; font-family: 'Outfit', sans-serif; }
+.cht-msg.bot  .cht-bubble { background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-bottom-left-radius: 6px; }
+.cht-msg.user .cht-bubble { background: linear-gradient(135deg, var(--orange), var(--orange3)); color: #fff; font-weight: 600; border-bottom-right-radius: 6px; box-shadow: 0 4px 14px rgba(249,115,22,0.35); }
+.cht-typing { display: flex !important; gap: 5px; align-items: center; padding: 12px 16px !important; }
+.cht-typing span { width: 7px; height: 7px; background: var(--text3); border-radius: 50%; animation: chtDot 1s infinite; }
+.cht-typing span:nth-child(2) { animation-delay: 0.2s; }
+.cht-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes chtDot { 0%,100%{transform:translateY(0);opacity:.35} 50%{transform:translateY(-5px);opacity:1} }
+.cht-quick { padding: 10px 12px; background: var(--surface); border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 5px; flex-shrink: 0; }
+.cht-quick-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text3); margin-bottom: 2px; }
+.cht-quick-btn { padding: 6px 11px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface2); font-size: 0.78rem; font-weight: 600; cursor: pointer; color: var(--text2); transition: background 0.15s, border-color 0.15s, color 0.15s; text-align: left; font-family: 'Outfit', sans-serif; }
+.cht-quick-btn:hover { background: var(--orange-dim); border-color: rgba(249,115,22,0.35); color: var(--orange); }
+.cht-input-area { display: flex; align-items: center; gap: 8px; padding: 11px 13px; border-top: 1px solid var(--border); background: var(--surface); flex-shrink: 0; }
+.cht-input { flex: 1; padding: 9px 14px; border: 1px solid var(--border); border-radius: 999px; font-size: 0.86rem; outline: none; font-family: 'Outfit', sans-serif; background: var(--surface2); color: var(--text); transition: border-color 0.2s, box-shadow 0.2s; }
+.cht-input:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(249,115,22,0.12); }
+.cht-input::placeholder { color: var(--text3); }
+.cht-input:disabled { opacity: 0.5; }
+.cht-send { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--orange3)); color: #fff; border: none; cursor: pointer; font-size: 0.88rem; transition: transform 0.15s, box-shadow 0.15s; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(249,115,22,0.40); }
+.cht-send:hover:not(:disabled) { transform: scale(1.1); box-shadow: 0 6px 18px rgba(249,115,22,0.58); }
+.cht-send:disabled { opacity: 0.35; cursor: not-allowed; }
+@media (max-width: 480px) {
+  .cht-window { width: calc(100vw - 20px); right: 10px; bottom: 82px; height: 80vh; }
+  .cht-toggle { bottom: 18px; right: 14px; }
+}
