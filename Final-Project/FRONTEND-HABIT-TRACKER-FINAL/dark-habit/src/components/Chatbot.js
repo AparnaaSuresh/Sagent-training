@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { getHabits, getTasks, getLogs, getStreak, getUserHistory } from '../api/api';
 import './Chatbot.css';
 
-const GEMINI_API_KEY = 'AIzaSyAc5Rq-0wfqRjlL75jZMWXgcoSP09yKL2w'; 
+const GEMINI_API_KEY = 'API KEY'; 
 
 const nd = (val) => {
   if (!val) return null;
